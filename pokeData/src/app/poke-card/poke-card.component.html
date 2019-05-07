@@ -1,0 +1,22 @@
+<div>
+    <input type="text" placeholder="Search your pokemon" [(ngModel)]="someInput"/>
+    <select [(ngModel)]="selectedType">
+        <option *ngFor="let type of types" [value]="type">{{type}}</option>
+    </select>
+    <button (click)="pokeSearch()">Search</button>
+    <button (click)="refresh()">Refresh</button>
+    <button (click)="displayByPower()">Sort by MaxCP<div *ngIf="isSorted">asc</div><div *ngIf="
+        !isSorted">desc</div></button>
+    <input type="text" [(ngModel)]="someValue" name="findEvolution"/>
+    <button (click)="findEvolution()">Submit</button>
+    <p>Displaying {{data.length}} entries</p>
+    <ul *ngFor="let pokemon of data">
+        <li>{{pokemon.name}}</li>
+        <li>{{pokemon.types}}</li>
+        <li>{{pokemon.about}}</li>
+        <li>{{pokemon.maxCP}}</li>
+        
+    </ul>   
+</div>
+
+
